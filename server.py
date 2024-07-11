@@ -4,7 +4,7 @@ import google.generativeai as genai
 import threading
 import time
 
-genai.configure(api_key='AIzaSyCo53qFQ04GeubsoGGm-2t0WShbyJ3XttY')
+genai.configure(api_key='') #Use your API key
 model = genai.GenerativeModel('gemini-pro')
 print("Model has been loaded")
 
@@ -35,9 +35,7 @@ def handle_client(client_socket, addr):
 
 def start_server():
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    # host = '10.113.21.176'
-    # host='192.168.137.1'
-    host = '192.168.101.201'
+    host = '' #enter ip address
     port = 12345
     server_socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)  # Reuse the socket address
     server_socket.bind((host, port))
